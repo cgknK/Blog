@@ -1,0 +1,4 @@
+django textfield vs charfield
+
+DateTimeField(auto_now_add=True)
+	auto_now_add ?
