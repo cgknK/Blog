@@ -1,0 +1,16 @@
+{% extends "blogs/base.html" %}
+
+<!-- html ekle -->
+
+{% block content %}
+    <p>Bu bir blog sitesidir.</p>
+
+    <ul>
+        {% for b in index %}
+            <li>{{ b.title }}</li>
+            <p>{{ b.text }}</p>
+        {% empty %}
+            <li>No post have been added yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
