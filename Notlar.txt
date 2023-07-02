@@ -2,3 +2,6 @@ django textfield vs charfield
 
 DateTimeField(auto_now_add=True)
 	auto_now_add ?
+
+winpty python manage.py süper kullanıcı oluşturur
+
