@@ -1,4 +1,4 @@
-ll_env/
+b_env/
 *.sqlite3
 
 # Byte-compiled / optimized / DLL files
