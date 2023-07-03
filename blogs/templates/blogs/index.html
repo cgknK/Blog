@@ -1,14 +1,14 @@
 {% extends "blogs/base.html" %}
 
-<!-- html ekle -->
-
 {% block content %}
     <p>Bu bir blog sitesidir.</p>
-
+    <a href="{% url 'blogs:new_post' %}">Add a new post</a>
     <ul>
         {% for b in index %}
-            <li>{{ b.title }}</li>
-            <p>{{ b.text }}</p>
+            <li>
+                <a href="{% url 'blogs:post' b.id %}">{{ b.title }}</a>
+            </li>
+            {% comment %}<p>{{ b.text[:50] }}</p>{% endcomment %}
         {% empty %}
             <li>No post have been added yet.</li>
         {% endfor %}

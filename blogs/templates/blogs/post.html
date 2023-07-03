@@ -1,0 +1,12 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+    <p>{{ post.date_added|date:'M d, Y H:i' }}</p>
+    <p>&nbsp;{{ post.text|linebreaks }}</p>
+    <p>
+        <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
+    </p>
+    {% if empty %}
+        <p>\0null''</p>
+    {% endif %}
+{% endblock content %}

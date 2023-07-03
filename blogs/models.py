@@ -8,10 +8,14 @@ class BlogPost(models.Model):
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
-    """
+
+"""
+class Meta:
+    #verbose_name_plural = 'posts'
+    
     def __str__(self):
         #Return string BlogPost#docstring
-        if len(self.title) < 50:
-            return self.title
-        return f"{self.title[:50]}..."
-    """
+        if len(self.text) < 50:
+            return self.text
+        return f"{self.text[:50]}..."
+"""

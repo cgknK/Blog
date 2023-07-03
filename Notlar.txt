@@ -5,3 +5,5 @@ DateTimeField(auto_now_add=True)
 
 winpty python manage.py süper kullanıcı oluşturur
 
+python manage.py runserver
+	sende böyle parametreli birşey yaz
