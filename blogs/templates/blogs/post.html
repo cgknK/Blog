@@ -1,11 +1,27 @@
 {% extends "blogs/base.html" %}
+{% block page_header %}
+    <h3>{{ post.title }}</h3>
+{% endblock page_header %}
 
 {% block content %}
-    <p>{{ post.date_added|date:'M d, Y H:i' }}</p>
-    <p>&nbsp;{{ post.text|linebreaks }}</p>
-    <p>
-        <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
-    </p>
+    <div class="card mb-3">
+        <h4 class="card-header">
+            <p>
+                {{ post.owner }}
+                ,    
+                {{ post.date_added|date:'M d/Y H:i' }}
+            </p>
+            {% if user.is_authenticated %}
+                <small>
+                    <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
+                </small>
+            {% endif %}
+        </h4>
+        <div class="card-body">
+            {{ post.text|linebreaks }}
+        </div>
+    </div>
+    <p>&nbsp; if empty çalışıyor mu? bak(empty post atılmıyor XD)</p>
     {% if empty %}
         <p>\0null''</p>
     {% endif %}

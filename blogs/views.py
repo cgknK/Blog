@@ -12,7 +12,6 @@ def index(request):
     context = {'index': blog_post}
     return render(request, 'blogs/index.html', context)
 
-@login_required
 def post(request, post_id):
     """Tek bir postu gösterir"""
     post = BlogPost.objects.get(id=post_id)

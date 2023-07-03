@@ -1,16 +1,26 @@
 {% extends "blogs/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+    <div class="jumbotron">
+        <h1 class="display-3">Bu bir blog sitesidir.</h1>
+        <p class="lead">...................................................</p>
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+            role="button">Register &raquo;</a>
+    </div>
+{% endblock page_header %}
 
 {% block content %}
-    <p>Bu bir blog sitesidir.</p>
-    <a href="{% url 'blogs:new_post' %}">Add a new post</a>
+    <h1>All Blogs order_by(date)</h1>
+    <h3><a href="{% url 'blogs:new_post' %}">Add a new post</a></h3>
     <ul>
         {% for b in index %}
-            <li>
+            <li><h3>
                 <a href="{% url 'blogs:post' b.id %}">{{ b.title }}</a>
-            </li>
+            </h3></li>
             {% comment %}<p>{{ b.text[:50] }}</p>{% endcomment %}
         {% empty %}
-            <li>No post have been added yet.</li>
+            <li><h3>No post have been added yet.</h3></li>
         {% endfor %}
     </ul>
 {% endblock content %}

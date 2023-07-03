@@ -20,3 +20,7 @@ kullanıcı kendi postlarını ayrıca görse güzel olur
 
 raise Http404 ve raise incele
 
+tests.py kullan
+
+https://getbootstrap.com/
+
