@@ -7,3 +7,16 @@ winpty python manage.py süper kullanıcı oluşturur
 
 python manage.py runserver
 	sende böyle parametreli birşey yaz
+
+robot testi ve mail ile doğrulama ekle
+
+python manage.py flush
+	//Verileri de sıfırlayarak resetler ve yeni bir superuser 
+	oluşturmak gerekir.
+
+sadece editlemeyi doğru kullanıcı ile sınırla
+
+kullanıcı kendi postlarını ayrıca görse güzel olur
+
+raise Http404 ve raise incele
+

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My apps
     'blogs',
+    'users',
 
     # Default
     'django.contrib.admin',
@@ -125,3 +126,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#@login_required dakoratörü, django oturum sayfasını bulabilsin diye
+LOGIN_URL = 'users:login'

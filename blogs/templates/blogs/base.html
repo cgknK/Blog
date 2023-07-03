@@ -1,5 +1,12 @@
 <!-- html -ensoncss- ekle-->
 <p>
     <a href="{% url 'blogs:index' %}">Blog</a>
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}
+        <a href="{% url 'users:logout' %}">Log out</a>
+    {% else %}
+        <a href="{% url 'users:login' %}">Log in</a>
+        <a href="{% url 'users:register' %}">Register</a>
+    {% endif %}
 </p>
 {% block content %}{% endblock content %}

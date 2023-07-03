@@ -20,4 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blogs.urls')),
+    # Bir üste eklemek daha mı mantıklı? bunu nasıl anlıyor ''->index users'a nasıl geçiyor
+    path('users/', include('users.urls')),
 ]
