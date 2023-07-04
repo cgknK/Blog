@@ -12,9 +12,11 @@
                 {{ post.date_added|date:'M d/Y H:i' }}
             </p>
             {% if user.is_authenticated %}
-                <small>
-                    <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
-                </small>
+                {% if post.owner == request.user %}
+                    <small>
+                        <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
+                    </small>
+                {% endif %}
             {% endif %}
         </h4>
         <div class="card-body">

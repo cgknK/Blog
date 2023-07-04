@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
@@ -14,7 +14,8 @@ def index(request):
 
 def post(request, post_id):
     """Tek bir postu gösterir"""
-    post = BlogPost.objects.get(id=post_id)
+    #post = BlogPost.objects.get(id=post_id)
+    post = get_object_or_404(BlogPost, id=post_id)
     context = {'post': post}
     return render(request, 'blogs/post.html', context)
 
@@ -44,6 +45,7 @@ def edit_post(request, post_id):
 
     if post.owner != request.user:
         raise Http404
+        #return redirect('blogs:new_post')
 
     if request.method != 'POST':
         #form = BlogForm(data=request.GET)#neden böyle değilde aşağıdaki gibi
