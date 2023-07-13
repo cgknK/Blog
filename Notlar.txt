@@ -1,3 +1,5 @@
+https://github.com/ehmatthes/django-simple-deploy
+
 django textfield vs charfield
 
 DateTimeField(auto_now_add=True)
